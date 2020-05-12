@@ -104,6 +104,7 @@ function bombHit() {
   for (let i = 0; i < bombs.length; i++) {
     let distance = dist(bombs[i].x, bombs[i].y, player.x, player.y);
     if (distance - size / 2 < bombs[i].size / 2) {
+      // IS THIS SMARTER?
       score -= bombs[i].size / 2;
       if (size >= 5) {
         size = player.size /= 2;
@@ -121,6 +122,7 @@ function ballHit() {
     let distance = dist(balls[i].x, balls[i].y, player.x, player.y);
     if (distance - size / 2 < balls[i].size / 2) {
       size = player.size += 1;
+      // IS THIS SMARTER?
       score += balls[i].size / 2;
       if (velocity > 0.03) {
         velocity = player.velocity -= 0.0002;
